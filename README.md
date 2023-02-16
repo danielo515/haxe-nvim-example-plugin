@@ -20,6 +20,33 @@ Once you did one of the previous steps, I recommend the following:
 1. delete the parts of this readme that do not apply to your plugin, like this first sections 
 1. update the installation instructions and documentation to match those of your plugins
 
+## Workflow
+
+Just add files and functions to the `src` folder. 
+I recommend you to avoid inheritance and subclassing because those are not very good supported 
+in the Lua target. I suggest you to focus and take advantage of the **many functional** capabilities
+Haxe has, such as:
+- lambas `() -> ` 
+- module level static functions (this will save you a lot of boilerplate)
+- static extensions (we include some by default)
+
+You must commit the generated Lua code. Most (if not all) NeoVim plugin managers will just clone 
+your plugin repository to the required NeoVim folders, and they will expect your plugin repository 
+to contain all the required plugin files, which in the case of haxe-nvim projects is the `lua` folder.
+
+When you want to test your plugin, just build it using `haxe build.hxml` and then test it in NeoVim.
+One of the simplest ways of testing this plugin in NeoVim is using packer and adding your local
+path in your filesystem where your plugin is just like any other NeoVim plugin. Something like:
+
+```lua
+use { 
+  '~/GIT/your-plugin-folder',
+   config = function()
+     require "example_plugin"
+   end,
+}
+```
+
 ## Differences from regular Haxe projects
 
 If you are already familiar with Haxe you may feel there are some differences between this project
@@ -37,6 +64,7 @@ not a trivial task!
 | Your plugin Readme should start right below here |
 ⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄
 ```
+# example_plugin
 
 ## How to install this plugin
 
