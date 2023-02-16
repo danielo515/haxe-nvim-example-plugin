@@ -1,0 +1,2 @@
+--library haxe-nvim
+--library safety:1.1.2 

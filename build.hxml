@@ -1,0 +1,23 @@
+libs.hxml
+--macro nullSafety("vim", Strict)
+
+-D analyzer-module
+-D analyzer-optimize
+-D analyzer-user-var-fusion
+-D analyzer-const_propagation
+-D analyzer-copy_propagation
+-D analyzer-local_dce
+-D analyzer-fusion
+-D analyzer-purity_inference
+
+-D lua-vanilla
+-D luajit
+
+
+-cp src
+-dce full
+
+--each
+
+--main Main
+--lua lua/example_plugin/init.lua
