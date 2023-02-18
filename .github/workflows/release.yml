@@ -15,7 +15,7 @@ jobs:
       - name: Build haxe code
         uses: krdlab/setup-haxe@v1
         with:
-          haxe-version: 4.1.2
+          haxe-version: 4.2.5
       - run: |
           haxe -version
           haxelib install --always libs.hxml
