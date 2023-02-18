@@ -12,11 +12,12 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
-      - name: Build haxe code
+      - name: Setup haxe
         uses: krdlab/setup-haxe@v1
         with:
           haxe-version: 4.2.5
-      - run: |
+      - name: Build haxe code
+        run: |
           haxe -version
           haxelib install --always libs.hxml
           haxe build.hxml
