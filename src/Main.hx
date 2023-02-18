@@ -31,6 +31,10 @@ function main() {
 
 // Example of a function that uses some of the provided Vim specific helpers
 // to write succinct code that is also type safe
+
+/**
+	Goes to the next tab, cycling to the first on the edges
+ */
 function nexTab() {
 	final pages = vim.Api.nvim_list_tabpages();
 	final currentTab = vim.Api.nvim_get_current_tabpage();
